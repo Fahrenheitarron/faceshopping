@@ -1,7 +1,7 @@
 <template>
   <div class="navigate">
-    <div class="search">
-      <div>
+    <div class="navigtor-search">
+      <div class="search">
         <input
           class="input"
           type="text"
@@ -41,6 +41,7 @@
       @click="tabClick"
     >
     </cube-tab-bar>
+
     <Home v-show="activeIndex === 'Home'"></Home>
     <Concern v-show="activeIndex === 'Concern'"></Concern>
     <Hot v-show="activeIndex === 'Hot'"></Hot>
@@ -102,6 +103,12 @@ export default {
 
 <style lang="less" scoped>
 .navigate {
+  .navigtor-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
   .search {
     height: 44px;
     background: url('../assets/search-bg.png') no-repeat;
@@ -138,6 +145,7 @@ export default {
   .tab-bar {
     font-size: 18px;
     color: #bbbccd;
+    margin-top: 50px;
   }
   .cube-tab-bar-slider {
     background-color: #ff61ab;
@@ -148,7 +156,7 @@ export default {
   .footer {
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: -2px;
     width: 100%;
     height: 74px;
     z-index: 100;

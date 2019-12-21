@@ -1,41 +1,33 @@
 <template>
-  <cube-scroll
-    ref="scroll"
-    :data="items"
-    :options="options"
-    @pulling-down="onPullingDown"
-    @pulling-up="onPullingUp"
-  >
-    <ul class="masonry">
-      <li
-        v-for="(item, index) in items"
-        class="list-item"
-        :key="index"
-        @click="linkToDetail"
+  <ul class="masonry">
+    <li
+      v-for="(item, index) in items"
+      class="list-item"
+      :key="index"
+      @click="linkToDetail"
+    >
+      <img
+        src="@/assets/Photo.png"
+        width="100%"
+        height="170px"
+        style="border-radius: 4px"
       >
-        <img
-          :src="item.url"
-          width="100%"
-          height="170px"
-          style="border-radius: 4px"
-        >
-        <p class="comment">{{item.content}}</p>
-        <div class="pic-num clearfix">
-          <span
-            class="fl"
-            style="color: #944FE9;"
-          >¥ {{item.price}}</span>
-          <span class="fr">晒单量 {{item.contents}}</span>
-        </div>
-      </li>
-    </ul>
-  </cube-scroll>
+      <p class="comment">{{item.content}}</p>
+      <div class="pic-num clearfix">
+        <span
+          class="fl"
+          style="color: #944FE9;"
+        >¥ {{item.price}}</span>
+        <span class="fr">晒单量 {{item.contents}}</span>
+      </div>
+    </li>
+  </ul>
 </template>
 <script>
 export default {
   data () {
     return {
-      items: []
+      items: [{ "contents": 9, "id": 882, "name": "Zero", "price": 21.0, "url": "adasd" }, { "contents": 53, "id": 37, "name": "Zero", "price": 286.0, "url": "adasd" }, { "contents": 79, "id": 972, "name": "Zero", "price": 155.0, "url": "adasd" }, { "contents": 21, "id": 701, "name": "Zero", "price": 26.0, "url": "adasd" }, { "contents": 46, "id": 569, "name": "Zero", "price": 430.0, "url": "adasd" }, { "contents": 37, "id": 481, "name": "Zero", "price": 68.0, "url": "adasd" }, { "contents": 82, "id": 683, "name": "Zero", "price": 572.0, "url": "adasd" }, { "contents": 16, "id": 272, "name": "Zero", "price": 728.0, "url": "adasd" }, { "contents": 41, "id": 713, "name": "Zero", "price": 530.0, "url": "adasd" }, { "contents": 77, "id": 865, "name": "Zero", "price": 607.0, "url": "adasd" }]
     }
   },
   computed: {
@@ -82,9 +74,12 @@ export default {
     }
   },
   mounted () {
-    this.$api.getConfigsByProductId(2).then((res) => {
-      this.items = res
-    })
+    // this.$api.getConfigsByProductId(2).then((res) => {
+    //   this.items = res
+    //   this.items.forEach((item) => {
+    //     item.url = '../assets/Photo.png'
+    //   })
+    // })
   }
 }
 </script>
@@ -108,7 +103,6 @@ export default {
   zoom: 1;
 }
 .masonry {
-  height: 600px;
   padding: 10px;
   -moz-column-count: 2; /* Firefox */
   -webkit-column-count: 2; /* Safari 和 Chrome */

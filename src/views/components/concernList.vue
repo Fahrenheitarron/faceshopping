@@ -1,58 +1,50 @@
 <template>
-  <cube-scroll
-    ref="scroll"
-    :data="items"
-    :options="options"
-    @pulling-down="onPullingDown"
-    @pulling-up="onPullingUp"
-  >
-    <ul class="concern">
-      <li
-        v-for="(item, index) in items"
-        class="list-item"
-        :key="index"
-        @click="linkToDetail"
-      >
-        <div class="clearfix">
-          <img
-            :src="item.url"
-            style="border-radius: 50%"
-            class="fl big-img"
-            width="120px"
-            height="120px"
-          >
-          <div class="fl">
-            <p>{{item.name}}</p>
-            <p style="margin-top:5px">{{item.add}}<span class="circle"></span>{{item.age}}岁<span class="circle"></span>单身</p>
-            <p style="margin-top:14px"><span
-                class="tag"
-                v-for="(tag, index) in item.like"
-                :key="index"
-              >{{tag}}</span></p>
-            <p style="margin-top:10px">
-              <img
-                v-for="(img,index) in item.content.url"
-                :key="index"
-                :src="img"
-                class="small-img"
-              >
-            </p>
-          </div>
+  <ul class="concern">
+    <li
+      v-for="(item, index) in items"
+      class="list-item"
+      :key="index"
+      @click="linkToDetail"
+    >
+      <div class="clearfix">
+        <img
+          src="@/assets/Photo.png"
+          style="border-radius: 50%"
+          class="fl big-img"
+          width="120px"
+          height="120px"
+        >
+        <div class="fl">
+          <p>{{item.name}}</p>
+          <p style="margin-top:5px">{{item.add}}<span class="circle"></span>{{item.age}}岁<span class="circle"></span>单身</p>
+          <p style="margin-top:14px"><span
+              class="tag"
+              v-for="(tag, index) in item.interest"
+              :key="index"
+            >{{tag}}</span></p>
+          <p style="margin-top:10px">
+            <img
+              v-for="(img,index) in item.imgs"
+              :key="index"
+              src="@/assets/Photo.png"
+              class="small-img"
+            >
+          </p>
         </div>
-        <p class="comment">{{item.content.content}}</p>
-        <div class="info">
-          颜值匹配交友度<span style="color: #944FE9;margin-right:30px">{{item.shopSimilar}}%</span>
-          购物喜好匹配度<span style="color: #944FE9">{{item.inSimilar}}%</span>
-        </div>
-      </li>
-    </ul>
-  </cube-scroll>
+      </div>
+      <p class="comment">{{item.content}}</p>
+      <div class="info">
+        颜值匹配交友度<span style="color: #944FE9;margin-right:30px">{{item.shopSimilar}}%</span>
+        购物喜好匹配度<span style="color: #944FE9">{{item.inSimilar}}%</span>
+      </div>
+    </li>
+  </ul>
 </template>
 <script>
 export default {
   data () {
     return {
-      items: []
+      items: [{ "activityId": 129, "add": "北京", "age": 47, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 966, "imgs": ["asdasda"], "inSimilar": 85.0, "interest": ["asdasda"], "likes": 25, "name": "Birll", "replies": 19, "sex": 0, "shopSimilar": 86.0, "skuId": 352, "userId": 940 }, { "activityId": 490, "add": "北京", "age": 19, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 408, "imgs": ["asdasda"], "inSimilar": 92.0, "interest": ["asdasda"], "likes": 32, "name": "Birll", "replies": 43, "sex": 0, "shopSimilar": 83.0, "skuId": 313, "userId": 811 }, { "activityId": 734, "add": "北京", "age": 8, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 443, "imgs": ["asdasda"], "inSimilar": 99.0, "interest": ["asdasda"], "likes": 12, "name": "Birll", "replies": 42, "sex": 0, "shopSimilar": 92.0, "skuId": 738, "userId": 529 }, { "activityId": 980, "add": "北京", "age": 30, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 601, "imgs": ["asdasda"], "inSimilar": 97.0, "interest": ["asdasda"], "likes": 47, "name": "Birll", "replies": 18, "sex": 0, "shopSimilar": 83.0, "skuId": 444, "userId": 486 }, { "activityId": 150, "add": "北京", "age": 49, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 463, "imgs": ["asdasda"], "inSimilar": 99.0, "interest": ["asdasda"], "likes": 39, "name": "Birll", "replies": 30, "sex": 0, "shopSimilar": 96.0, "skuId": 816, "userId": 469 }, { "activityId": 431, "add": "北京", "age": 33, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 264, "imgs": ["asdasda"], "inSimilar": 86.0, "interest": ["asdasda"], "likes": 49, "name": "Birll", "replies": 0, "sex": 0, "shopSimilar": 91.0, "skuId": 246, "userId": 827 }, { "activityId": 78, "add": "北京", "age": 6, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 355, "imgs": ["asdasda"], "inSimilar": 95.0, "interest": ["asdasda"], "likes": 22, "name": "Birll", "replies": 36, "sex": 0, "shopSimilar": 98.0, "skuId": 366, "userId": 645 }, { "activityId": 392, "add": "北京", "age": 9, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 49, "imgs": ["asdasda"], "inSimilar": 89.0, "interest": ["asdasda"], "likes": 6, "name": "Birll", "replies": 3, "sex": 0, "shopSimilar": 84.0, "skuId": 329, "userId": 465 }, { "activityId": 562, "add": "北京", "age": 49, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 652, "imgs": ["asdasda"], "inSimilar": 83.0, "interest": ["asdasda"], "likes": 43, "name": "Birll", "replies": 44, "sex": 0, "shopSimilar": 93.0, "skuId": 961, "userId": 703 }, { "activityId": 727, "add": "北京", "age": 19, "content": "good", "create": 1576944547088, "head_img": "adasda", "id": 150, "imgs": ["asdasda"], "inSimilar": 89.0, "interest": ["asdasda"], "likes": 38, "name": "Birll", "replies": 39, "sex": 0, "shopSimilar": 88.0, "skuId": 72, "userId": 797 }]
     }
   },
   computed: {
@@ -99,9 +91,9 @@ export default {
     }
   },
   mounted () {
-    this.$api.getConfigsByProductId(1).then((res) => {
-      this.items = res
-    })
+    // this.$api.getConfigsByProductId(1).then((res) => {
+    //   this.items = res
+    // })
   }
 }
 </script>
