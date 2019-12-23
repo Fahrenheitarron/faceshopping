@@ -7,7 +7,7 @@
       @click="linkToDetail"
     >
       <img
-        src="@/assets/Photo.png"
+        :src="item.url"
         width="100%"
         height="170px"
         style="border-radius: 4px"
@@ -27,7 +27,16 @@
 export default {
   data () {
     return {
-      items: [{ "contents": 9, "id": 882, "name": "Zero", "price": 21.0, "url": "adasd" }, { "contents": 53, "id": 37, "name": "Zero", "price": 286.0, "url": "adasd" }, { "contents": 79, "id": 972, "name": "Zero", "price": 155.0, "url": "adasd" }, { "contents": 21, "id": 701, "name": "Zero", "price": 26.0, "url": "adasd" }, { "contents": 46, "id": 569, "name": "Zero", "price": 430.0, "url": "adasd" }, { "contents": 37, "id": 481, "name": "Zero", "price": 68.0, "url": "adasd" }, { "contents": 82, "id": 683, "name": "Zero", "price": 572.0, "url": "adasd" }, { "contents": 16, "id": 272, "name": "Zero", "price": 728.0, "url": "adasd" }, { "contents": 41, "id": 713, "name": "Zero", "price": 530.0, "url": "adasd" }, { "contents": 77, "id": 865, "name": "Zero", "price": 607.0, "url": "adasd" }]
+      items: [{ "contents": 9, "id": 882, "name": "Zero", "price": 21.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/100273/13/7824/274562/5dff03e2Eaed1b705/e051f1dd195acee4.png" },
+      { "contents": 53, "id": 37, "name": "Zero", "price": 286.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/94402/8/7926/124807/5dff0371E5824fa65/679ba65b40e8a33a.png" },
+      { "contents": 79, "id": 972, "name": "Zero", "price": 155.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/108637/25/1596/102060/5dff0370E22e1a8d3/1ddc5dcd57d27505.png" },
+      { "contents": 21, "id": 701, "name": "Zero", "price": 26.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/104453/34/7901/91677/5dfee798E28a5ae55/749f2f1be178f0f6.png" },
+      { "contents": 46, "id": 569, "name": "Zero", "price": 430.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/108637/25/1596/102060/5dff0370E22e1a8d3/1ddc5dcd57d27505.png" },
+      { "contents": 37, "id": 481, "name": "Zero", "price": 68.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/92603/20/7828/202029/5dfee798Ef327c2d6/d75827afcdd38320.png" },
+      { "contents": 82, "id": 683, "name": "Zero", "price": 572.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/91798/11/7717/172103/5dff0370E87e9d7c5/b3b7188d1f104590.png" },
+      { "contents": 16, "id": 272, "name": "Zero", "price": 728.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/95093/28/7766/151753/5dfee798E02490680/72990afc50c1bd3c.png" },
+      { "contents": 41, "id": 713, "name": "Zero", "price": 530.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/100273/13/7824/274562/5dff03e2Eaed1b705/e051f1dd195acee4.png" },
+      { "contents": 77, "id": 865, "name": "Zero", "price": 607.0, "url": "//img10.360buyimg.com/imgzone/jfs/t1/108637/25/1596/102060/5dff0370E22e1a8d3/1ddc5dcd57d27505.png" }]
     }
   },
   computed: {
